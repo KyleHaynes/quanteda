@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../../../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -179,7 +179,7 @@ committee &lt;-<span class="st"> "外務"</span>
 
 <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1947</span><span class="op">:</span><span class="dv">2017</span>) {
   <span class="kw">cat</span>(<span class="kw">as.character</span>(<span class="kw">Sys.time</span>()), year, committee, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-  temp &lt;-<span class="st"> </span><span class="kw">get_meeting</span>(<span class="dt">meetingName =</span> committee, <span class="dt">year =</span> year)
+  temp &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/kaigiroku/topics/get_meeting">get_meeting</a></span>(<span class="dt">meetingName =</span> committee, <span class="dt">year =</span> year)
   <span class="cf">if</span> (<span class="kw">is.null</span>(temp)) <span class="cf">next</span>
   <span class="kw">saveRDS</span>(temp, <span class="dt">file =</span> <span class="kw">sprintf</span>(<span class="st">"%s/%s_%s.rds"</span>, folder_download, year, committee))
   <span class="kw">Sys.sleep</span>(<span class="dv">10</span>)
@@ -187,7 +187,7 @@ committee &lt;-<span class="st"> "外務"</span>
 
 <span class="co"># ファイルを結合して保存</span>
 file_all &lt;-<span class="st"> </span><span class="kw">list.files</span>(folder_download, <span class="dt">full =</span> <span class="ot">TRUE</span>, <span class="dt">pattern =</span> <span class="st">".rds"</span>)
-speech &lt;-<span class="st"> </span><span class="kw">lapply</span>(<span class="kw">as.list</span>(file_all), readRDS) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>()
+speech &lt;-<span class="st"> </span><span class="kw">lapply</span>(<span class="kw">as.list</span>(file_all), readRDS) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/dplyr/topics/bind">bind_rows</a></span>()
 <span class="kw">saveRDS</span>(speech, <span class="dt">file =</span> <span class="kw">paste0</span>(folder_download, <span class="st">"committee_speeches.rds"</span>))</code></pre></div>
 </div>
 <div id="create-corpus" class="section level4">
@@ -735,124 +735,124 @@ lda &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocument
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">武力行使</td>
-<td align="left">中東</td>
-<td align="left">漁業</td>
-<td align="left">公開</td>
-<td align="left">防止</td>
-<td align="left">根拠</td>
-<td align="left">写真</td>
-<td align="left">平和条約</td>
-<td align="left">パキスタン</td>
-<td align="left">公表</td>
+<td align="left">局長</td>
+<td align="left">記事</td>
+<td align="left">攻撃</td>
+<td align="left">日本国</td>
+<td align="left">旅券</td>
+<td align="left">経費</td>
+<td align="left">建設</td>
+<td align="left">専門家</td>
+<td align="left">密約</td>
+<td align="left">ドル</td>
 </tr>
 <tr class="even">
-<td align="left">センター</td>
-<td align="left">旅券</td>
-<td align="left">危険</td>
-<td align="left">出る</td>
-<td align="left">一層</td>
-<td align="left">批判</td>
-<td align="left">常任理事国</td>
-<td align="left">イラン</td>
-<td align="left">人権</td>
-<td align="left">基本</td>
-</tr>
-<tr class="odd">
+<td align="left">現時点</td>
 <td align="left">被害</td>
-<td align="left">配慮</td>
-<td align="left">操業</td>
-<td align="left">捜査</td>
-<td align="left">採択</td>
-<td align="left">経験</td>
-<td align="left">抑止力</td>
-<td align="left">昨日</td>
-<td align="left">第一</td>
+<td align="left">在日米軍</td>
+<td align="left">租税条約</td>
+<td align="left">お互い</td>
+<td align="left">計上</td>
+<td align="left">違反</td>
+<td align="left">抗議</td>
+<td align="left">ミャンマー</td>
 <td align="left">地雷</td>
 </tr>
-<tr class="even">
-<td align="left">進める</td>
-<td align="left">常任理事国</td>
-<td align="left">石油</td>
-<td align="left">やり方</td>
-<td align="left">業務</td>
-<td align="left">配慮</td>
-<td align="left">基づく</td>
-<td align="left">判決</td>
-<td align="left">引き</td>
-<td align="left">極東</td>
-</tr>
 <tr class="odd">
-<td align="left">大きい</td>
-<td align="left">行き</td>
-<td align="left">漁船</td>
-<td align="left">否定</td>
-<td align="left">日本国</td>
-<td align="left">難民</td>
-<td align="left">広島</td>
-<td align="left">イスラエル</td>
-<td align="left">皆様</td>
+<td align="left">漁業</td>
+<td align="left">漁業</td>
 <td align="left">引き渡し</td>
-</tr>
-<tr class="even">
-<td align="left">ある程度</td>
-<td align="left">見通し</td>
-<td align="left">現場</td>
-<td align="left">生活</td>
-<td align="left">議題</td>
-<td align="left">意義</td>
-<td align="left">会合</td>
-<td align="left">竹島</td>
-<td align="left">脅威</td>
-<td align="left">軽減</td>
-</tr>
-<tr class="odd">
-<td align="left">入る</td>
-<td align="left">ルール</td>
-<td align="left">発効</td>
-<td align="left">大きい</td>
-<td align="left">促進</td>
-<td align="left">日本語</td>
-<td align="left">インドネシア</td>
-<td align="left">再開</td>
+<td align="left">防止</td>
+<td align="left">利用</td>
+<td align="left">比べ</td>
 <td align="left">ケニア</td>
-<td align="left">沖縄県民</td>
+<td align="left">期間</td>
+<td align="left">コメント</td>
+<td align="left">真剣</td>
 </tr>
 <tr class="even">
-<td align="left">構想</td>
-<td align="left">過程</td>
-<td align="left">質疑</td>
-<td align="left">経過</td>
-<td align="left">経費</td>
-<td align="left">日米関係</td>
-<td align="left">全然</td>
-<td align="left">ある程度</td>
-<td align="left">唯一</td>
-<td align="left">先に</td>
+<td align="left">悪い</td>
+<td align="left">イギリス</td>
+<td align="left">又は</td>
+<td align="left">両国間</td>
+<td align="left">言い方</td>
+<td align="left">首脳会談</td>
+<td align="left">脅威</td>
+<td align="left">役所</td>
+<td align="left">否定</td>
+<td align="left">行使</td>
 </tr>
 <tr class="odd">
-<td align="left">認定</td>
-<td align="left">疑問</td>
-<td align="left">根拠</td>
-<td align="left">自身</td>
-<td align="left">図る</td>
-<td align="left">幾ら</td>
-<td align="left">ドル</td>
-<td align="left">変更</td>
-<td align="left">今申</td>
-<td align="left">身柄</td>
+<td align="left">広島</td>
+<td align="left">局長</td>
+<td align="left">過程</td>
+<td align="left">香港</td>
+<td align="left">行使</td>
+<td align="left">果たす</td>
+<td align="left">学校</td>
+<td align="left">判決</td>
+<td align="left">批判</td>
+<td align="left">関係者</td>
 </tr>
 <tr class="even">
-<td align="left">効果</td>
-<td align="left">全然</td>
-<td align="left">進める</td>
-<td align="left">移民</td>
+<td align="left">彼ら</td>
+<td align="left">視点</td>
+<td align="left">身柄</td>
 <td align="left">提案理由</td>
+<td align="left">民主党</td>
+<td align="left">否定</td>
+<td align="left">何度</td>
 <td align="left">前回</td>
+<td align="left">定義</td>
+<td align="left">紛争</td>
+</tr>
+<tr class="odd">
+<td align="left">パキスタン</td>
+<td align="left">何度</td>
+<td align="left">沖縄県民</td>
+<td align="left">促進</td>
+<td align="left">進める</td>
+<td align="left">脅威</td>
+<td align="left">戦略</td>
+<td align="left">五年</td>
+<td align="left">長い</td>
+<td align="left">進める</td>
+</tr>
+<tr class="even">
+<td align="left">案件</td>
+<td align="left">比べ</td>
+<td align="left">早期</td>
 <td align="left">イスラエル</td>
-<td align="left">日米関係</td>
-<td align="left">貿易</td>
-<td align="left">に対し</td>
+<td align="left">何ら</td>
+<td align="left">自身</td>
+<td align="left">活用</td>
+<td align="left">決まって</td>
+<td align="left">視点</td>
+<td align="left">除去</td>
+</tr>
+<tr class="odd">
+<td align="left">やり方</td>
+<td align="left">国内法</td>
+<td align="left">発効</td>
+<td align="left">相手国</td>
+<td align="left">何で</td>
+<td align="left">準備</td>
+<td align="left">宣言</td>
+<td align="left">国会議員</td>
+<td align="left">出る</td>
+<td align="left">抗議</td>
+</tr>
+<tr class="even">
+<td align="left">社会</td>
+<td align="left">三年</td>
+<td align="left">部隊</td>
+<td align="left">資する</td>
+<td align="left">武力</td>
+<td align="left">出る</td>
+<td align="left">軽減</td>
+<td align="left">プロジェクト</td>
+<td align="left">目標</td>
+<td align="left">法案</td>
 </tr>
 </tbody>
 </table>

@@ -75,7 +75,7 @@ one-dimensional document positions using conditional maximum likelihood." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -323,12 +323,9 @@ calculating the svds, only applies when <code>sparse = TRUE</code></p></td>
 #&gt; V1 -0.35945 0.01070
 #&gt; 
 #&gt; Estimated Feature Scores:
-#&gt;           A      B       C       D      E       F      G       H       I
-#&gt; beta -8.445 -9.300 -11.258 -12.364 -13.33 -13.237 -13.49 -12.359 -11.585
-#&gt; psi  -6.641 -6.989  -7.869  -8.404  -8.89  -8.196  -8.12  -6.426  -5.345
-#&gt;            J
-#&gt; beta -10.424
-#&gt; psi   -3.928</div><div class='input'><span class='fu'>coef</span>(<span class='no'>wf</span>)</div><div class='output co'>#&gt; $documents
+#&gt;           A      B       C       D      E       F      G       H       I       J
+#&gt; beta -8.445 -9.300 -11.258 -12.364 -13.33 -13.237 -13.49 -12.359 -11.585 -10.424
+#&gt; psi  -6.641 -6.989  -7.869  -8.404  -8.89  -8.196  -8.12  -6.426  -5.345  -3.928</div><div class='input'><span class='fu'>coef</span>(<span class='no'>wf</span>)</div><div class='output co'>#&gt; $documents
 #&gt;          theta     alpha
 #&gt; R1 -1.29056981 -4.558205
 #&gt; R2 -0.61643907  1.303010
@@ -411,7 +408,7 @@ calculating the svds, only applies when <code>sparse = TRUE</code></p></td>
      <span class='no'>wf2a</span>$<span class='no'>features</span>[<span class='st'>'underdispersedTerms'</span>],
      <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>.8</span>, <span class='kw'>xlim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1.0</span>), <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1.0</span>), <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"black"</span>)
 <span class='kw'>if</span> (<span class='fu'>require</span>(<span class='no'>austin</span>)) {
-    <span class='no'>wf_austin</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>austin</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/austin/topics/wordfish'>wordfish</a></span>(<span class='kw pkg'>quanteda</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/quanteda/topics/convert-wrappers'>as.wfm</a></span>(<span class='no'>ie2010dfm</span>), <span class='kw'>dir</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>6</span>,<span class='fl'>5</span>))
+    <span class='no'>wf_austin</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>austin</span><span class='kw ns'>::</span><span class='fu'>wordfish</span>(<span class='kw pkg'>quanteda</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/quanteda/topics/convert-wrappers'>as.wfm</a></span>(<span class='no'>ie2010dfm</span>), <span class='kw'>dir</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>6</span>,<span class='fl'>5</span>))
     <span class='fu'>cor</span>(<span class='no'>wf1</span>$<span class='no'>theta</span>, <span class='no'>wf_austin</span>$<span class='no'>theta</span>)
 }
 <span class='co'># }</span></pre>

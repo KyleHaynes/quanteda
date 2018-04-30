@@ -315,13 +315,9 @@ removed</p></td>
 #&gt;   text2  0         0   0  0    1             1</div><div class='input'><span class='fu'>dfm_select</span>(<span class='no'>my_dfm</span>, <span class='fu'>c</span>(<span class='st'>"s$"</span>, <span class='st'>".y"</span>), <span class='kw'>selection</span> <span class='kw'>=</span> <span class='st'>"remove"</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"regex"</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 14 features (50% sparse).
 #&gt; 2 x 14 sparse Matrix of class "dfm"
 #&gt;        features
-#&gt; docs    ruined your opposition tax plan . the or Sweden have more progressive
-#&gt;   text1      1    1          1   1    1 1   0  0      0    0    0           0
-#&gt;   text2      0    0          0   0    0 0   1  1      1    1    1           1
-#&gt;        features
-#&gt; docs    taxation ?
-#&gt;   text1        0 0
-#&gt;   text2        1 1</div><div class='input'><span class='fu'>dfm_select</span>(<span class='no'>my_dfm</span>, <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>), <span class='kw'>selection</span> <span class='kw'>=</span> <span class='st'>"keep"</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"fixed"</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 9 features (50% sparse).
+#&gt; docs    ruined your opposition tax plan . the or Sweden have more progressive taxation ?
+#&gt;   text1      1    1          1   1    1 1   0  0      0    0    0           0        0 0
+#&gt;   text2      0    0          0   0    0 0   1  1      1    1    1           1        1 1</div><div class='input'><span class='fu'>dfm_select</span>(<span class='no'>my_dfm</span>, <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>), <span class='kw'>selection</span> <span class='kw'>=</span> <span class='st'>"keep"</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"fixed"</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 9 features (50% sparse).
 #&gt; 2 x 9 sparse Matrix of class "dfm"
 #&gt;        features
 #&gt; docs    My was by your Does the or have more
@@ -329,13 +325,9 @@ removed</p></td>
 #&gt;   text2  0   0  0    0    1   1  1    1    1</div><div class='input'><span class='fu'>dfm_select</span>(<span class='no'>my_dfm</span>, <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>), <span class='kw'>selection</span> <span class='kw'>=</span> <span class='st'>"remove"</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"fixed"</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 11 features (50% sparse).
 #&gt; 2 x 11 sparse Matrix of class "dfm"
 #&gt;        features
-#&gt; docs    Christmas ruined opposition tax plan . United_States Sweden progressive
-#&gt;   text1         1      1          1   1    1 1             0      0           0
-#&gt;   text2         0      0          0   0    0 0             1      1           1
-#&gt;        features
-#&gt; docs    taxation ?
-#&gt;   text1        0 0
-#&gt;   text2        1 1</div><div class='input'>
+#&gt; docs    Christmas ruined opposition tax plan . United_States Sweden progressive taxation ?
+#&gt;   text1         1      1          1   1    1 1             0      0           0        0 0
+#&gt;   text2         0      0          0   0    0 0             1      1           1        1 1</div><div class='input'>
 <span class='co'># select based on character length</span>
 <span class='fu'>dfm_select</span>(<span class='no'>my_dfm</span>, <span class='kw'>min_nchar</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 7 features (50% sparse).
 #&gt; 2 x 7 sparse Matrix of class "dfm"
@@ -367,13 +359,9 @@ removed</p></td>
 <span class='no'>tmpdfm</span></div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 18 features (38.9% sparse).
 #&gt; 2 x 18 sparse Matrix of class "dfm"
 #&gt;        features
-#&gt; docs    this is a document with lots of stopwords . no if , and or but about it
-#&gt;   text1    1  1 1        1    1    1  1         1 1  0  0 0   0  0   0     0  0
-#&gt;   text2    0  0 0        0    0    1  1         1 1  1  1 2   1  1   1     1  1
-#&gt;        features
-#&gt; docs    :
-#&gt;   text1 0
-#&gt;   text2 1</div><div class='input'><span class='fu'>dfm_remove</span>(<span class='no'>tmpdfm</span>, <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>))</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 6 features (25% sparse).
+#&gt; docs    this is a document with lots of stopwords . no if , and or but about it :
+#&gt;   text1    1  1 1        1    1    1  1         1 1  0  0 0   0  0   0     0  0 0
+#&gt;   text2    0  0 0        0    0    1  1         1 1  1  1 2   1  1   1     1  1 1</div><div class='input'><span class='fu'>dfm_remove</span>(<span class='no'>tmpdfm</span>, <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>))</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 6 features (25% sparse).
 #&gt; 2 x 6 sparse Matrix of class "dfm"
 #&gt;        features
 #&gt; docs    document lots stopwords . , :

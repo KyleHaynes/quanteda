@@ -80,7 +80,7 @@ the document)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -276,13 +276,9 @@ the counts of features of <code>x</code> not matched to a dictionary key.  If
 <span class='no'>my_dfm</span></div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 11 features (50% sparse).
 #&gt; 2 x 11 sparse Matrix of class "dfm"
 #&gt;        features
-#&gt; docs    christmas ruined opposition tax plan . united_states sweden progressive
-#&gt;   text1         1      1          1   1    1 1             0      0           0
-#&gt;   text2         0      0          0   0    0 0             1      1           1
-#&gt;        features
-#&gt; docs    taxation ?
-#&gt;   text1        0 0
-#&gt;   text2        1 1</div><div class='input'>
+#&gt; docs    christmas ruined opposition tax plan . united_states sweden progressive taxation ?
+#&gt;   text1         1      1          1   1    1 1             0      0           0        0 0
+#&gt;   text2         0      0          0   0    0 0             1      1           1        1 1</div><div class='input'>
 <span class='co'># glob format</span>
 <span class='fu'>dfm_lookup</span>(<span class='no'>my_dfm</span>, <span class='no'>my_dict</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"glob"</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 5 features (50% sparse).
 #&gt; 2 x 5 sparse Matrix of class "dfm"

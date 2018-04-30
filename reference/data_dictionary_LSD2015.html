@@ -75,7 +75,7 @@ format." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -238,8 +238,8 @@ available at <a href='http://lexicoder.com'>http://lexicoder.com</a>.</p>
 <span class='no'>txt</span> <span class='kw'>&lt;-</span> <span class='st'>"This aggressive policy will not win friends."</span>
 <span class='fu'><a href='tokens_lookup.html'>tokens_lookup</a></span>(<span class='fu'><a href='tokens.html'>tokens</a></span>(<span class='no'>txt</span>), <span class='kw'>dictionary</span> <span class='kw'>=</span> <span class='no'>data_dictionary_LSD2015</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; tokens from 1 document.
 #&gt; text1 :
-#&gt; [1] "This"         "NEGATIVE"     "policy"       "will"         "NEG_POSITIVE"
-#&gt; [6] "POSITIVE"     "POSITIVE"     "."           
+#&gt; [1] "This"         "NEGATIVE"     "policy"       "will"         "NEG_POSITIVE" "POSITIVE"     "POSITIVE"    
+#&gt; [8] "."           
 #&gt; </div><div class='input'><span class='co'>## tokens from 1 document.</span>
 <span class='co'>## text1 :</span>
 <span class='co'>## [1] "This"   "NEGATIVE"   "policy"   "will"   "NEG_POSITIVE" "POSITIVE" "."</span>
@@ -257,68 +257,37 @@ available at <a href='http://lexicoder.com'>http://lexicoder.com</a>.</p>
 #&gt;   LibDem             22       26            0            0
 #&gt;   PC                  9        8            0            0
 #&gt;   SNP                 4       13            0            0
-#&gt;   UKIP               18       29            0            0</div><div class='input'><span class='fu'><a href='kwic.html'>kwic</a></span>(<span class='no'>data_char_ukimmig2010</span>, <span class='st'>"not"</span>)</div><div class='output co'>#&gt;                                                                       
-#&gt;           [BNP, 434]        resident population of Britain was | not |
-#&gt;           [BNP, 480]                 in England and Wales were | not |
-#&gt;           [BNP, 523]               2005 birth rate figure does | not |
-#&gt;           [BNP, 690]                     ' new immigrants' are | not |
-#&gt;           [BNP, 979]                  fractured society. We do | not |
-#&gt;          [BNP, 1431]             racially motivated crime, and | not |
-#&gt;          [BNP, 1787]                      to ensure that we do | not |
-#&gt;          [BNP, 2020]              aspect of national security, | not |
-#&gt;          [BNP, 3182]                       in other words, are | not |
-#&gt;   [Conservative, 54]                         be reduced. We do | not |
-#&gt;  [Conservative, 101]                      of thousands a year, | not |
-#&gt;  [Conservative, 313] foreign students or existing institutions | not |
-#&gt;         [Greens, 67]                     thousand years. It is | not |
-#&gt;        [Greens, 384]                     be a positive choice, | not |
-#&gt;        [Greens, 465]                     manifesto.- We should | not |
-#&gt;        [Greens, 479]        people whose immigration status is | not |
-#&gt;        [Greens, 537]              provided for people who have | not |
-#&gt;        [Greens, 626]           who have been trafficked should | not |
-#&gt;        [Greens, 661]          - Those seeking sanctuary should | not |
-#&gt;         [Labour, 61]                  of employment and wages, | not |
-#&gt;        [Labour, 151]              rising employment and wages, | not |
-#&gt;        [Labour, 427]                  of employment and wages, | not |
-#&gt;        [Labour, 575]                Britain is a privilege and | not |
-#&gt;        [LibDem, 277]            This route to citizenship will | not |
-#&gt;        [LibDem, 469]           individuals for whom removal is | not |
-#&gt;          [UKIP, 124]      ensuring any future immigration does | not |
-#&gt;          [UKIP, 367]           deportation. Such citizens will | not |
-#&gt;          [UKIP, 386]                have completed a period of | not |
-#&gt;          [UKIP, 626]            future the British courts will | not |
-#&gt;          [UKIP, 689]          admitting officer that marriage, | not |
-#&gt;                                        
-#&gt;  born in this country(                 
-#&gt;  " white British"(                     
-#&gt;  include births to second and          
-#&gt;  from Eastern Europe, as               
-#&gt;  share the Orwellian knee-jerk response
-#&gt;  the perpetrators, as often            
-#&gt;  become a dispossessed minority in     
-#&gt;  merely an issue of social             
-#&gt;  products of' false consciousness      
-#&gt;  need to attract people to             
-#&gt;  hundreds of thousands. To             
-#&gt;  registered with Companies house.      
-#&gt;  just a matter of immigration          
-#&gt;  the outcome of desperation.           
-#&gt;  tolerate the long-term presence of    
-#&gt;  defined. Such immigrants are          
-#&gt;  succeeded in their claim for          
-#&gt;  be subject to summary deportation     
-#&gt;  be detained, and in                   
-#&gt;  rising immigration, and requiring     
-#&gt;  rising immigration- but we            
-#&gt;  rising immigration. We recognise      
-#&gt;  a right, we will                      
-#&gt;  apply to people arriving after        
-#&gt;  possible or imminent, except          
-#&gt;  exceed 50,000 people p.a.             
-#&gt;  be eligible for benefits.             
-#&gt;  less then five years as               
-#&gt;  be allowed to appeal to               
-#&gt;  residence, is their primary           </div></pre>
+#&gt;   UKIP               18       29            0            0</div><div class='input'><span class='fu'><a href='kwic.html'>kwic</a></span>(<span class='no'>data_char_ukimmig2010</span>, <span class='st'>"not"</span>)</div><div class='output co'>#&gt;                                                                                                              
+#&gt;           [BNP, 434]        resident population of Britain was | not | born in this country(                 
+#&gt;           [BNP, 480]                 in England and Wales were | not | " white British"(                     
+#&gt;           [BNP, 523]               2005 birth rate figure does | not | include births to second and          
+#&gt;           [BNP, 690]                     ' new immigrants' are | not | from Eastern Europe, as               
+#&gt;           [BNP, 979]                  fractured society. We do | not | share the Orwellian knee-jerk response
+#&gt;          [BNP, 1431]             racially motivated crime, and | not | the perpetrators, as often            
+#&gt;          [BNP, 1787]                      to ensure that we do | not | become a dispossessed minority in     
+#&gt;          [BNP, 2020]              aspect of national security, | not | merely an issue of social             
+#&gt;          [BNP, 3182]                       in other words, are | not | products of' false consciousness      
+#&gt;   [Conservative, 54]                         be reduced. We do | not | need to attract people to             
+#&gt;  [Conservative, 101]                      of thousands a year, | not | hundreds of thousands. To             
+#&gt;  [Conservative, 313] foreign students or existing institutions | not | registered with Companies house.      
+#&gt;         [Greens, 67]                     thousand years. It is | not | just a matter of immigration          
+#&gt;        [Greens, 384]                     be a positive choice, | not | the outcome of desperation.           
+#&gt;        [Greens, 465]                     manifesto.- We should | not | tolerate the long-term presence of    
+#&gt;        [Greens, 479]        people whose immigration status is | not | defined. Such immigrants are          
+#&gt;        [Greens, 537]              provided for people who have | not | succeeded in their claim for          
+#&gt;        [Greens, 626]           who have been trafficked should | not | be subject to summary deportation     
+#&gt;        [Greens, 661]          - Those seeking sanctuary should | not | be detained, and in                   
+#&gt;         [Labour, 61]                  of employment and wages, | not | rising immigration, and requiring     
+#&gt;        [Labour, 151]              rising employment and wages, | not | rising immigration- but we            
+#&gt;        [Labour, 427]                  of employment and wages, | not | rising immigration. We recognise      
+#&gt;        [Labour, 575]                Britain is a privilege and | not | a right, we will                      
+#&gt;        [LibDem, 277]            This route to citizenship will | not | apply to people arriving after        
+#&gt;        [LibDem, 469]           individuals for whom removal is | not | possible or imminent, except          
+#&gt;          [UKIP, 124]      ensuring any future immigration does | not | exceed 50,000 people p.a.             
+#&gt;          [UKIP, 367]           deportation. Such citizens will | not | be eligible for benefits.             
+#&gt;          [UKIP, 386]                have completed a period of | not | less then five years as               
+#&gt;          [UKIP, 626]            future the British courts will | not | be allowed to appeal to               
+#&gt;          [UKIP, 689]          admitting officer that marriage, | not | residence, is their primary           </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

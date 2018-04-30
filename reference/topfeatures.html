@@ -75,7 +75,7 @@ as a whole or separated by document." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -237,10 +237,10 @@ See <a href='groups.html'>groups</a> for details.</p></td>
 #&gt; 1100  927  761  584  565  539  426  337  300  293 </div><div class='input'><span class='fu'>topfeatures</span>(<span class='no'>mydfm_nostopw</span>)</div><div class='output co'>#&gt;      us    must america     new  people   world  nation    time     can freedom 
 #&gt;     165      99      98      93      90      87      79      73      72      71 </div><div class='input'>
 <span class='co'># least frequent features</span>
-<span class='fu'>topfeatures</span>(<span class='no'>mydfm_nostopw</span>, <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt;     hatfield      mondale        baker       moomaw    momentous   occurrence 
-#&gt;            1            1            1            1            1            1 
-#&gt;    routinely       unique       really every-4-year 
-#&gt;            1            1            1            1 </div><div class='input'>
+<span class='fu'>topfeatures</span>(<span class='no'>mydfm_nostopw</span>, <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt;     hatfield      mondale        baker       moomaw    momentous   occurrence    routinely       unique 
+#&gt;            1            1            1            1            1            1            1            1 
+#&gt;       really every-4-year 
+#&gt;            1            1 </div><div class='input'>
 <span class='co'># top features of individual documents  </span>
 <span class='fu'>topfeatures</span>(<span class='no'>mydfm_nostopw</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>groups</span> <span class='kw'>=</span> <span class='fu'><a href='docnames.html'>docnames</a></span>(<span class='no'>mydfm_nostopw</span>))</div><div class='output co'>#&gt; $`1981-Reagan`
 #&gt;         us government       must    believe     people 

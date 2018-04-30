@@ -78,7 +78,7 @@ be counted.)" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -261,14 +261,14 @@ the resulting numeric vector</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>mydfm</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='dfm.html'>dfm</a></span>(<span class='no'>data_corpus_inaugural</span>[<span class='fl'>1</span>:<span class='fl'>2</span>])
-<span class='fu'>docfreq</span>(<span class='no'>mydfm</span>[, <span class='fl'>1</span>:<span class='fl'>20</span>])</div><div class='output co'>#&gt; fellow-citizens              of             the          senate             and 
-#&gt;               1               2               2               1               2 
-#&gt;           house representatives               :           among    vicissitudes 
-#&gt;               1               1               2               1               1 
-#&gt;        incident              to            life              no           event 
-#&gt;               1               2               1               1               1 
-#&gt;           could            have          filled              me            with 
-#&gt;               1               2               1               2               1 </div><div class='input'>
+<span class='fu'>docfreq</span>(<span class='no'>mydfm</span>[, <span class='fl'>1</span>:<span class='fl'>20</span>])</div><div class='output co'>#&gt; fellow-citizens              of             the          senate             and           house 
+#&gt;               1               2               2               1               2               1 
+#&gt; representatives               :           among    vicissitudes        incident              to 
+#&gt;               1               2               1               1               1               2 
+#&gt;            life              no           event           could            have          filled 
+#&gt;               1               1               1               1               2               1 
+#&gt;              me            with 
+#&gt;               2               1 </div><div class='input'>
 <span class='co'># replication of worked example from</span>
 <span class='co'># https://en.wikipedia.org/wiki/Tf-idf#Example_of_tf.E2.80.93idf</span>
 <span class='no'>wiki_dfm</span> <span class='kw'>&lt;-</span>

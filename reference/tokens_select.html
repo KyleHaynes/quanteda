@@ -82,7 +82,7 @@ expressions, including a dictionary." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -355,13 +355,12 @@ selected or removed</p></td>
                    the high sense I entertain of this distinguished honor."</span>)
 <span class='fu'>tokens_remove</span>(<span class='fu'><a href='tokens.html'>tokens</a></span>(<span class='no'>txt</span>, <span class='kw'>remove_punct</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='fu'><a href='http://www.rdocumentation.org/packages/stopwords/topics/stopwords'>stopwords</a></span>(<span class='st'>"english"</span>))</div><div class='output co'>#&gt; tokens from 2 documents.
 #&gt; text1 :
-#&gt;  [1] "Fellow"     "citizens"   "called"     "upon"       "voice"     
-#&gt;  [6] "country"    "execute"    "functions"  "Chief"      "Magistrate"
+#&gt;  [1] "Fellow"     "citizens"   "called"     "upon"       "voice"      "country"    "execute"    "functions" 
+#&gt;  [9] "Chief"      "Magistrate"
 #&gt; 
 #&gt; text2 :
-#&gt;  [1] "occasion"      "proper"        "shall"         "arrive"       
-#&gt;  [5] "shall"         "endeavor"      "express"       "high"         
-#&gt;  [9] "sense"         "entertain"     "distinguished" "honor"        
+#&gt;  [1] "occasion"      "proper"        "shall"         "arrive"        "shall"         "endeavor"     
+#&gt;  [7] "express"       "high"          "sense"         "entertain"     "distinguished" "honor"        
 #&gt; </div><div class='input'>
 <span class='co'># token_keep example: keep two-letter words</span>
 <span class='fu'>tokens_keep</span>(<span class='fu'><a href='tokens.html'>tokens</a></span>(<span class='no'>txt</span>, <span class='kw'>remove_punct</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='st'>"??"</span>)</div><div class='output co'>#&gt; tokens from 2 documents.

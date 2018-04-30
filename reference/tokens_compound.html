@@ -78,7 +78,7 @@ subsequently as single tokens, for instance in constructing a dfm." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">quanteda</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
       </span>
     </div>
 
@@ -247,50 +247,42 @@ have been replaced by  compound "tokens" joined by the concatenator</p>
 <span class='no'>myseqs</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='fu'>c</span>(<span class='st'>"tax"</span>), <span class='fu'>c</span>(<span class='st'>"income"</span>, <span class='st'>"tax"</span>), <span class='fu'>c</span>(<span class='st'>"capital"</span>, <span class='st'>"gains"</span>, <span class='st'>"tax"</span>), <span class='fu'>c</span>(<span class='st'>"inheritance"</span>, <span class='st'>"tax"</span>))
 (<span class='no'>cw</span> <span class='kw'>&lt;-</span> <span class='fu'>tokens_compound</span>(<span class='no'>mytoks</span>, <span class='no'>myseqs</span>))</div><div class='output co'>#&gt; tokens from 2 documents.
 #&gt; text1 :
-#&gt; [1] "The"               "new"               "law"              
-#&gt; [4] "included"          "a"                 "capital_gains_tax"
-#&gt; [7] "and"               "an"                "inheritance_tax"  
+#&gt; [1] "The"               "new"               "law"               "included"          "a"                
+#&gt; [6] "capital_gains_tax" "and"               "an"                "inheritance_tax"  
 #&gt; 
 #&gt; text2 :
-#&gt;  [1] "New"         "York"        "City"        "has"         "raised"     
-#&gt;  [6] "taxes"       "an"          "income_tax"  "and"         "inheritance"
-#&gt; [11] "taxes"      
+#&gt;  [1] "New"         "York"        "City"        "has"         "raised"      "taxes"       "an"         
+#&gt;  [8] "income_tax"  "and"         "inheritance" "taxes"      
 #&gt; </div><div class='input'><span class='fu'><a href='dfm.html'>dfm</a></span>(<span class='no'>cw</span>)</div><div class='output co'>#&gt; Document-feature matrix of: 2 documents, 16 features (40.6% sparse).
 #&gt; 2 x 16 sparse Matrix of class "dfm"
 #&gt;        features
-#&gt; docs    the new law included a and an inheritance york city has raised taxes
-#&gt;   text1   1   1   1        1 1   1  1           0    0    0   0      0     0
-#&gt;   text2   0   1   0        0 0   1  1           1    1    1   1      1     2
+#&gt; docs    the new law included a and an inheritance york city has raised taxes income_tax capital_gains_tax
+#&gt;   text1   1   1   1        1 1   1  1           0    0    0   0      0     0          0                 1
+#&gt;   text2   0   1   0        0 0   1  1           1    1    1   1      1     2          1                 0
 #&gt;        features
-#&gt; docs    income_tax capital_gains_tax inheritance_tax
-#&gt;   text1          0                 1               1
-#&gt;   text2          1                 0               0</div><div class='input'>
+#&gt; docs    inheritance_tax
+#&gt;   text1               1
+#&gt;   text2               0</div><div class='input'>
 <span class='co'># when used as a dictionary for dfm creation</span>
 <span class='no'>mydict1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='dictionary.html'>dictionary</a></span>(<span class='fu'>list</span>(<span class='kw'>tax</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"tax"</span>, <span class='st'>"income tax"</span>, <span class='st'>"capital gains tax"</span>, <span class='st'>"inheritance tax*"</span>)))
 (<span class='no'>cw2</span> <span class='kw'>&lt;-</span> <span class='fu'>tokens_compound</span>(<span class='no'>mytoks</span>, <span class='no'>mydict1</span>))</div><div class='output co'>#&gt; tokens from 2 documents.
 #&gt; text1 :
-#&gt; [1] "The"               "new"               "law"              
-#&gt; [4] "included"          "a"                 "capital_gains_tax"
-#&gt; [7] "and"               "an"                "inheritance_tax"  
+#&gt; [1] "The"               "new"               "law"               "included"          "a"                
+#&gt; [6] "capital_gains_tax" "and"               "an"                "inheritance_tax"  
 #&gt; 
 #&gt; text2 :
-#&gt;  [1] "New"               "York"              "City"             
-#&gt;  [4] "has"               "raised"            "taxes"            
-#&gt;  [7] "an"                "income_tax"        "and"              
-#&gt; [10] "inheritance_taxes"
+#&gt;  [1] "New"               "York"              "City"              "has"               "raised"           
+#&gt;  [6] "taxes"             "an"                "income_tax"        "and"               "inheritance_taxes"
 #&gt; </div><div class='input'>
 <span class='co'># to pick up "taxes" in the second text, set valuetype = "regex"</span>
 (<span class='no'>cw3</span> <span class='kw'>&lt;-</span> <span class='fu'>tokens_compound</span>(<span class='no'>mytoks</span>, <span class='no'>mydict1</span>, <span class='kw'>valuetype</span> <span class='kw'>=</span> <span class='st'>"regex"</span>))</div><div class='output co'>#&gt; tokens from 2 documents.
 #&gt; text1 :
-#&gt; [1] "The"               "new"               "law"              
-#&gt; [4] "included"          "a"                 "capital_gains_tax"
-#&gt; [7] "and"               "an"                "inheritance_tax"  
+#&gt; [1] "The"               "new"               "law"               "included"          "a"                
+#&gt; [6] "capital_gains_tax" "and"               "an"                "inheritance_tax"  
 #&gt; 
 #&gt; text2 :
-#&gt;  [1] "New"               "York"              "City"             
-#&gt;  [4] "has"               "raised"            "taxes"            
-#&gt;  [7] "an"                "income_tax"        "and"              
-#&gt; [10] "inheritance_taxes"
+#&gt;  [1] "New"               "York"              "City"              "has"               "raised"           
+#&gt;  [6] "taxes"             "an"                "income_tax"        "and"               "inheritance_taxes"
 #&gt; </div><div class='input'>
 <span class='co'># dictionaries w/glob matches</span>
 <span class='no'>mydict2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='dictionary.html'>dictionary</a></span>(<span class='fu'>list</span>(<span class='kw'>negative</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"bad* word*"</span>, <span class='st'>"negative"</span>, <span class='st'>"awful text"</span>),
@@ -299,14 +291,12 @@ have been replaced by  compound "tokens" joined by the concatenator</p>
                  <span class='kw'>txt2</span> <span class='kw'>=</span> <span class='st'>"Some damn good stuff, like the text, she likes that too."</span>))
 <span class='fu'>tokens_compound</span>(<span class='no'>toks</span>, <span class='no'>mydict2</span>)</div><div class='output co'>#&gt; tokens from 2 documents.
 #&gt; txt1 :
-#&gt;  [1] "I"          "liked_this" ","          "when"       "we"        
-#&gt;  [6] "can"        "use"        "bad_words"  ","          "in"        
-#&gt; [11] "awful_text" "."         
+#&gt;  [1] "I"          "liked_this" ","          "when"       "we"         "can"        "use"        "bad_words" 
+#&gt;  [9] ","          "in"         "awful_text" "."         
 #&gt; 
 #&gt; txt2 :
-#&gt;  [1] "Some"       "damn"       "good_stuff" ","          "like"      
-#&gt;  [6] "the"        "text"       ","          "she"        "likes_that"
-#&gt; [11] "too"        "."         
+#&gt;  [1] "Some"       "damn"       "good_stuff" ","          "like"       "the"        "text"       ","         
+#&gt;  [9] "she"        "likes_that" "too"        "."         
 #&gt; </div><div class='input'>
 <span class='co'># with collocations</span>
 <span class='no'>cols</span> <span class='kw'>&lt;-</span>
@@ -315,9 +305,8 @@ have been replaced by  compound "tokens" joined by the concatenator</p>
 <span class='no'>toks</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='tokens.html'>tokens</a></span>(<span class='st'>"The new law included capital gains taxes and inheritance taxes."</span>)
 <span class='fu'>tokens_compound</span>(<span class='no'>toks</span>, <span class='no'>cols</span>)</div><div class='output co'>#&gt; tokens from 1 document.
 #&gt; text1 :
-#&gt; [1] "The"                 "new"                 "law"                
-#&gt; [4] "included"            "capital_gains_taxes" "and"                
-#&gt; [7] "inheritance_taxes"   "."                  
+#&gt; [1] "The"                 "new"                 "law"                 "included"           
+#&gt; [5] "capital_gains_taxes" "and"                 "inheritance_taxes"   "."                  
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
